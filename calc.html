@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora financeira</h1>
+    <h2>Evite perdas </h2>
+        <h3>Quanto que sua empresa vai ter de receita recuperada com nossos recursos
+    </h3>
+    Informe o valor base de uma revisão: <br>
+    <input type="text" id="input_revisao"> <br>
+    Informe a quantidade de clientes diários: <br>
+    <input type="text" id="input_clientes_diarios"> <br>
+    Informe a quantidade de dias trabalhados: <br>
+    <input type="text" id="input_dias_trabalhados"> <br> <br>
+    <button onclick="verificarCalculo()" >
+        Calcular 
+    </button>
+    <div id="div_calculo"></div>
+</body>
+</html>
+<script>
+        function verificarCalculo(){
+            const revisao= Number(input_revisao.value)
+            const clientesDiarios= Number(input_clientes_diarios.value)
+            const diasTrabalhados = Number(input_dias_trabalhados.value)
+        
+            var receitaTotal= revisao*clientesDiarios*diasTrabalhados
+            var clientesPerdidos= receitaTotal*0.25
+            var valorEstimado= receitaTotal+(receitaTotal*0.25)
+
+            div_calculo.innerHTML=`A receita perdida vai ser em torno de R$ ${clientesPerdidos} e com nosso recurso sua receita 
+            vai aumentar em R$${valorEstimado}, estimando um aumento de 25% de lucro no seu negócio.`
+
+}
+</script>
