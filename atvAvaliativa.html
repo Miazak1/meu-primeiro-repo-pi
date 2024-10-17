@@ -44,9 +44,8 @@
             var ultDigito = contaFinal.toString().slice(-1)
             
             // Senha aleatória
-            var palavraChave1 = 'alfa'
-            var palavraChave2 = 'beta'
-            var palavraChave3 = 'gama'
+            var palavraChave = ''
+            var palavraNumero= Math.floor(Math.random()*3)
 
             //Caracter Especial senha 
             var  caracterEspecial = "!@#$%&"
@@ -73,24 +72,24 @@
                 por ${numeroAleatorio} que resultará em ${contaFinal}. <br>`
                 if(digito == ultDigito){
                     //validação senha
-                    if(senha.indexOf('alfa')){
-                        for(n = 0; n <= caracterEspecial.length; n++){
-                if(caracterEspecial[n]>= 0){
-                    alert('sou fa')
-                }
-            }
-                    } else if(senha.indexOf('beta')){
-                        
-                    } else if(senha.indexOf('gama')){
-                        
+                        if(palavraNumero = 0){
+                            palavraChave= 'Alfa'
+                            senha.indexOf('Alfa')
+                        } 
+                        else if(palavraNumero = 1){
+                            palavraChave = 'Beta'
+                        } 
+                        else if(palavraNumero=2){
+                            palavraChave= 'Gama'
+                        }
                     }
-                }
-            }
-            else if (digito != ultDigito){
+                     }
+                else if (digito != ultDigito){
                 alert('O dígito informado não corresponde à conta.')
-            }
-        }
-    </script>
+                }
+                }
+            
+                </script>
     
 </body>
 </html>
