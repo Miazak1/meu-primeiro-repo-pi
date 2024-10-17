@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Avaliativa</title>
+</head>
+<body><center>
+        <h1 style="background-color: beige;color: black;">Caio & Vinicius's banks</h1>
+        <p>Informe o numero da conta</p>
+        <input type="number" id="input_conta">
+        <p>Informa o digito da conta</p>
+        <input type="text" id="input_digito">
+        <p>Informe a senha</p>
+        <input type="text" id="input_senha"> <br> <br>
+        <button onclick="simular()">
+            Simular já
+        </button>
+        <div id="div_resultado"></div>
+    </center>
+    <script>
+        function simular(){
+            const conta = (input_conta.value).toString()
+            const digito = input_digito.value
+            const senha = input_senha.value
+            
+            // Validação soma = par
+            const primeroNumero = Number(conta.charAt("0"))
+            const segundoNumero = Number(conta.charAt("1"))
+            var somarConta = primeroNumero + segundoNumero
+            
+
+            // Geração de numeros aleatórios para multiplicar pela conta
+            var numeroMinimo = 2
+            var numeroMaximo = 5
+            var numeroAleatorio = Math.floor(Math.random()*
+            (numeroMaximo- numeroMinimo + 1)) + numeroMinimo
+
+            // numero multiplicado 
+            var contaFinal = conta * numeroAleatorio
+            
+
+            // digito igual ao ultimo numero da conta 
+            var ultDigito = contaFinal.toString().slice(-1)
+            
+            // Senha aleatória
+            var palavraChave1 = 'alfa'
+            var palavraChave2 = 'beta'
+            var palavraChave3 = 'gama'
+
+            //Caracter Especial senha 
+            var  caracterEspecial = "!@#$%&"
+            var numeros= '3456789102111213'
+            
+            
+
+            //12 Números Especial Senha
+            var numAleatorioMin= 3
+            var numAleatorioMax = 15
+            var NumAleatorio = Math.floor(Math.random()*
+            (numAleatorioMax - numAleatorioMin +1)+numAleatorioMin)
+
+           
+
+
+            console.log(numeroAleatorio)
+            if(conta.length > 6 || conta.length < 6 || somarConta%2 == 1 
+            ){
+                alert('Erro, o numero da conta não consta')
+            } else if (conta.length = 6 && somarConta%2 == 0){
+                //validação conta
+                div_resultado.innerHTML = `O numero da conta é ${conta} e sera multiplicado
+                por ${numeroAleatorio} que resultará em ${contaFinal}. <br>`
+                if(digito == ultDigito){
+                    //validação senha
+                    if(senha.indexOf('alfa')){
+                        for(n = 0; n <= caracterEspecial.length; n++){
+                if(caracterEspecial[n]>= 0){
+                    alert('sou fa')
+                }
+            }
+                    } else if(senha.indexOf('beta')){
+                        
+                    } else if(senha.indexOf('gama')){
+                        
+                    }
+                }
+            }
+            else if (digito != ultDigito){
+                alert('O dígito informado não corresponde à conta.')
+            }
+        }
+    </script>
+    
+</body>
+</html>
